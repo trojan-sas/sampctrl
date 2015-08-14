@@ -1,5 +1,9 @@
-**sampctrl - ** v1.0
+sampctrl - v1.0
 ==
+
+Show your players what's new on your server with RevCTRL, easy peasy!
+
+![pawn](https://i.imgur.com/eOWgtZP.png "pawn")
 
 ### Additions
 * [Adds revctrl.php to GitHub repo.](https://github.com/zeelorenc/sampctrl/blob/master/revctrl.php)
