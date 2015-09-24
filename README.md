@@ -1,7 +1,9 @@
 **RevCTRL for SA-MP -** v1.1
 ==
 
-If you are using the default URL disclosed in the filterscript, you neither need to worry about it because it will automatically be updated for you. The filterscript does not have to be updated but it would be ideal to do so. ![new look](https://i.imgur.com/d0Wbtq6.png "new look")
+If you are using the default URL disclosed in the filterscript, you neither need to worry about it because it will automatically be updated for you. The filterscript does not have to be updated but it would be ideal to do so. 
+
+![new look](https://i.imgur.com/d0Wbtq6.png "new look")
 
 ### Additions
 * Recently added revisions are listed separately from the old revisions.
