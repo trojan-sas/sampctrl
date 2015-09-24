@@ -11,20 +11,13 @@
 
 // Must change defines
 
-//#define PROJECT_ID  1
-#if !defined PROJECT_ID
- #error Define your project id. Find it on your RevCTRL project's about page.
-#endif
+//#define PROJECT_ID		1
+//#define USER_PROJECT		"IrresistibleDev/SF-CNR" // {Your username}/{Your project codename}
 
-//#define USER_PROJECT		"IrresistibleDev/SF-CNR" // you can grab it off the API but still it's tedious
-#if !defined USER_PROJECT
- #error Define USER_PROJECT with your own project
-#endif
+// Variables
 
-// General defines
-
-#define API_URL			"irresistiblegaming.com/rc_updates.php?id=" #PROJECT_ID // You can use your own!!! Check revctrl.php 
-#define DIALOG_CHANGES		4000 // change if you want
+#define UPDATES_URL		"irresistiblegaming.com/rc_updates.php?id=" #PROJECT_ID // You can use your own!!! Check revctrl.php 
+#define DIALOG_CHANGES		4000
 
 // Forward
 
@@ -39,7 +32,19 @@ public OnRevCTRLHTTPResponse(index, response_code, data[]) {
 	return ShowPlayerDialog(index, DIALOG_CHANGES, DIALOG_STYLE_MSGBOX, "{C0C0C0}" #USER_PROJECT "{FFFFFF} - RevCTRL", data, "Okay", "");
 }
 
+// Commands
+
+CMD:changes(playerid, params[]) return cmd_updates(playerid, params);
 CMD:updates(playerid, params[]) {
-	HTTP(playerid, HTTP_GET, API_URL, "", "OnRevCTRLHTTPResponse");
+	HTTP(playerid, HTTP_GET, UPDATES_URL, "", "OnRevCTRLHTTPResponse");
 	return SendClientMessage(playerid, -1, "Reading latest changes from {C0C0C0}www.revctrl.com/" #USER_PROJECT "/latest{FFFFFF}, please wait!");
 }
+
+// Errors (Undefined neccessary variables)
+#if !defined USER_PROJECT
+ #error Define USER_PROJECT with your {username}/{project codename}.
+#endif
+
+#if !defined PROJECT_ID
+ #error Define your project id. Find it on your RevCTRL project's about page.
+#endif
